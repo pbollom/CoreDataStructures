@@ -1,0 +1,42 @@
+package Stack;
+
+/**
+ * Linked list data structure used internal to the Stack class.
+ * 
+ * @author pbollom
+ *
+ * @param <T> the type of object the StackNode holds
+ */
+public class StackNode<T> {
+	private StackNode<T> priorNode;
+	/**
+	 * Returns a reference to the prior node in the linked list.
+	 * Could be null if this is the last node in the list.
+	 * @return reference to the prior node in the list, or null if there is no prior node
+	 */
+	public StackNode<T> getPriorNode()
+	{
+		return priorNode;
+	}
+	
+	private T item;
+	/**
+	 * Returns a reference to the item this node stores.
+	 * @return reference to the item this node stores.
+	 */
+	public T getItem()
+	{
+		return this.item;
+	}
+	
+	/**
+	 * Initialize a new node in the linked list.
+	 * @param item the item to store in the node
+	 * @param priorNode reference to the node immediately preceding this node
+	 */
+	public StackNode(T item, StackNode<T> priorNode)
+	{
+		this.item = item;
+		this.priorNode = priorNode;
+	}
+}
