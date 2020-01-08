@@ -1,5 +1,12 @@
 package Queue;
 
+/**
+ * Linked list data structure used internal to the Queue class.
+ * 
+ * @author pbollom
+ *
+ * @param <T> the type of object the QueueNode holds
+ */
 public class QueueNode<T> {
 	private QueueNode<T> nextNode;
 	/**
@@ -11,9 +18,10 @@ public class QueueNode<T> {
 	{
 		return nextNode;
 	}
+	
 	/**
-	 * ***pbollom TODO
-	 * @param nextNode
+	 * Updates this node's pointer to the next node in the linked list
+	 * @param nextNode reference to the next node to point to
 	 */
 	public void SetNextNode(QueueNode<T> nextNode)
 	{
