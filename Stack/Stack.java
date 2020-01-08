@@ -8,7 +8,7 @@ package Stack;
  *
  * @param <T> the type of object to add to the stack
  */
-public class Stack<T> {
+public class Stack<T> implements IStack<T> {
 	
 	private StackNode<T> topNode;
 	
@@ -17,9 +17,8 @@ public class Stack<T> {
 	 */
 	public Stack() { }
 	
-	/**
-	 * Adds an item to the top of the stack
-	 * @param item the item to add to the top of the stack.
+	/* (non-Javadoc)
+	 * @see Stack.IStack#Push(java.lang.Object)
 	 */
 	public void Push(T item)
 	{
@@ -27,28 +26,26 @@ public class Stack<T> {
 		topNode = new StackNode<T>(item, topNode);
 	}
 	
-	/**
-	 * Removes the top item from the stack and returns it.
-	 * @return the item that was formerly on the top of the stack
+	/* (non-Javadoc)
+	 * @see Stack.IStack#Pop()
 	 */
 	public T Pop()
 	{
 		if (this.topNode == null) { return null; }
 		
-		T topItem = this.topNode.getItem();
-		topNode = this.topNode.getPriorNode();
+		T topItem = this.topNode.GetItem();
+		topNode = this.topNode.GetPriorNode();
 		
 		return topItem;
 	}
 	
-	/**
-	 * Returns a reference to the top item in the stack without removing it.
-	 * @return the item currently on the top of the stack
+	/* (non-Javadoc)
+	 * @see Stack.IStack#Peek()
 	 */
 	public T Peek()
 	{
 		if (this.topNode == null) { return null; }
 		
-		return this.topNode.getItem();
+		return this.topNode.GetItem();
 	}
 }

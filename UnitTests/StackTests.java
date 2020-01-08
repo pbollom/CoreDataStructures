@@ -7,13 +7,13 @@ import Stack.Stack;
 public class StackTests {
 
 	@Test
-	public void peek_emptyStack_returnsNull() {
+	public void Peek_EmptyStack_ReturnsNull() {
 		Stack<Object> stack = new Stack<Object>();
 		assertNull(stack.Peek());
 	}
 	
 	@Test
-	public void peek_stackWithOneObject_returnsReferenceToSameObject()
+	public void Peek_SingleItemStack_ReturnsReferenceToSameObject()
 	{
 		Stack<Object> stack = new Stack<Object>();
 		Object obj = new Object();
@@ -23,7 +23,7 @@ public class StackTests {
 	}
 	
 	@Test
-	public void peek_calledMultipleTimes_doesNotRemoveTopObject()
+	public void Peek_CalledMultipleTimes_DoesNotRemoveTopObject()
 	{
 		Stack<Object> stack = new Stack<Object>();
 		Object obj = new Object();
@@ -35,13 +35,13 @@ public class StackTests {
 	}
 	
 	@Test
-	public void pop_emptyStack_returnsNull() {
+	public void Pop_EmptyStack_ReturnsNull() {
 		Stack<Object> stack = new Stack<Object>();
 		assertNull(stack.Pop());
 	}
 	
 	@Test
-	public void pop_stackWithOneObject_retursReferenceToSameObject()
+	public void Pop_SingleItemStack_ReturnsReferenceToSameObject()
 	{
 		Stack<Object> stack = new Stack<Object>();
 		Object obj = new Object();
@@ -51,7 +51,7 @@ public class StackTests {
 	}
 	
 	@Test
-	public void pop_stackWithMultipleObjects_returnsObjectsLIFO()
+	public void Pop_MultiItemStack_ReturnsObjectsLIFO()
 	{
 		Stack<Object> stack = new Stack<Object>();
 		Object firstIn = new Object();
