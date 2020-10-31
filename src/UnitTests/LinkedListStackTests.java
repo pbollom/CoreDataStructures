@@ -2,20 +2,20 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import Stack.Stack;
+import Stack.LinkedListStack;
 
-public class StackTests {
+public class LinkedListStackTests {
 
 	@Test
 	public void Peek_EmptyStack_ReturnsNull() {
-		Stack<Object> stack = new Stack<Object>();
+		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		assertNull(stack.Peek());
 	}
 	
 	@Test
 	public void Peek_SingleItemStack_ReturnsReferenceToSameObject()
 	{
-		Stack<Object> stack = new Stack<Object>();
+		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object obj = new Object();
 		stack.Push(obj);
 		
@@ -25,7 +25,7 @@ public class StackTests {
 	@Test
 	public void Peek_CalledMultipleTimes_DoesNotRemoveTopObject()
 	{
-		Stack<Object> stack = new Stack<Object>();
+		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object obj = new Object();
 		stack.Push(obj);
 		
@@ -36,14 +36,14 @@ public class StackTests {
 	
 	@Test
 	public void Pop_EmptyStack_ReturnsNull() {
-		Stack<Object> stack = new Stack<Object>();
+		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		assertNull(stack.Pop());
 	}
 	
 	@Test
 	public void Pop_SingleItemStack_ReturnsReferenceToSameObject()
 	{
-		Stack<Object> stack = new Stack<Object>();
+		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object obj = new Object();
 		stack.Push(obj);
 		
@@ -53,7 +53,7 @@ public class StackTests {
 	@Test
 	public void Pop_MultiItemStack_ReturnsObjectsLIFO()
 	{
-		Stack<Object> stack = new Stack<Object>();
+		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object firstIn = new Object();
 		stack.Push(firstIn);
 		Object secondIn = new Object();
