@@ -4,10 +4,12 @@ import static org.junit.Assert.*;
 
 import List.IList;
 
-public abstract class ListTestsBase<T extends IList<Object>>
+public abstract class ListTestsBase
 {
 	protected IList<Object> list;
-    
+	
+	protected abstract void SetUp();
+
 	protected void Count_EmptyList_ReturnsZero_Base() {		
 		assertEquals(list.Count(), 0);
 	}

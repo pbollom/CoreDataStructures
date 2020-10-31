@@ -1,7 +1,5 @@
 package UnitTests;
 
-import List.IList;
-
 public interface IListTests {
 	void Count_EmptyList_ReturnsZero();
 	

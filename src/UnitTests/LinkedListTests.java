@@ -3,7 +3,7 @@ package UnitTests;
 import org.junit.*;
 import List.LinkedList;
 
-public class LinkedListTests extends ListTestsBase<LinkedList<Object>> implements IListTests {
+public class LinkedListTests extends ListTestsBase implements IListTests {
     
     @Before
 	public void SetUp()

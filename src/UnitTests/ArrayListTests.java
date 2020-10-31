@@ -3,7 +3,7 @@ package UnitTests;
 import org.junit.*;
 import List.ArrayList;
 
-public class ArrayListTests extends ListTestsBase<ArrayList<Object>> implements IListTests {
+public class ArrayListTests extends ListTestsBase implements IListTests {
 
 	@Before
 	public void SetUp()
