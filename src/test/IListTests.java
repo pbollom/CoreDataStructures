@@ -1,4 +1,4 @@
-package UnitTests;
+package test;
 
 public interface IListTests {
 	void Count_EmptyList_ReturnsZero();
