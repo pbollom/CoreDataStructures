@@ -13,4 +13,10 @@ public interface IQueue<T> {
 	 * @return the object currently at the front of the queue
 	 */
 	T dequeue();
+
+	/**
+	 * Returns the count of items in the queue
+	 * @return the count of items in the queue
+	 */
+	int count();
 }

@@ -67,4 +67,42 @@ public class LinkedListStackTests {
 		assertNull(stack.pop());
 	}
 
+	@Test
+	public void count_EmptyStack_ReturnsZero()
+	{
+		LinkedListStack<Object> queue = new LinkedListStack<Object>();
+		assertEquals(0, queue.count());
+	}
+
+	@Test
+	public void count_WithItems_ReturnsNumberPushed()
+	{
+		LinkedListStack<Object> queue = new LinkedListStack<Object>();
+		queue.push(new Object());
+
+		assertEquals(1, queue.count());
+	}
+
+	@Test
+	public void count_WithItems_ReturnsPushedMinusPopped()
+	{
+		LinkedListStack<Object> queue = new LinkedListStack<Object>();
+		queue.push(new Object());
+		queue.push(new Object());
+		queue.push(new Object());
+		queue.pop();
+		
+		assertEquals(2, queue.count());
+	}
+
+	@Test
+	public void count_Peeked_DoesNotChangeCount()
+	{
+		LinkedListStack<Object> queue = new LinkedListStack<Object>();
+		queue.push(new Object());
+		queue.push(new Object());
+		queue.peek();
+		
+		assertEquals(2, queue.count());
+	}
 }

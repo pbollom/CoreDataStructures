@@ -7,14 +7,14 @@ import queue.LinkedListQueue;
 public class LinkedListQueueTests {
 
 	@Test
-	public void Dequeue_EmptyQueue_ReturnsNull()
+	public void dequeue_EmptyQueue_ReturnsNull()
 	{
 		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
 		assertNull(queue.dequeue());
 	}
 
 	@Test
-	public void Dequeue_SingleItemQueue_ReturnsSingleItem()
+	public void dequeue_SingleItemQueue_ReturnsSingleItem()
 	{
 		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
 		Object obj = new Object();
@@ -25,7 +25,7 @@ public class LinkedListQueueTests {
 	}
 	
 	@Test
-	public void Dequeue_MultiItemQueue_ReturnsItemsFIFO()
+	public void dequeue_MultiItemQueue_ReturnsItemsFIFO()
 	{
 		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
 		Object firstIn = new Object();
@@ -39,5 +39,33 @@ public class LinkedListQueueTests {
 		assertEquals(secondIn, queue.dequeue());
 		assertEquals(thirdIn, queue.dequeue());
 		assertNull(queue.dequeue());
+	}
+
+	@Test
+	public void count_EmptyQueue_ReturnsZero()
+	{
+		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
+		assertEquals(0, queue.count());
+	}
+
+	@Test
+	public void count_WithItems_ReturnsNumberEnqueued()
+	{
+		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
+		queue.enqueue(new Object());
+
+		assertEquals(1, queue.count());
+	}
+
+	@Test
+	public void count_WithItems_ReturnsEnqueuedMinusDequeued()
+	{
+		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
+		queue.enqueue(new Object());
+		queue.enqueue(new Object());
+		queue.enqueue(new Object());
+		queue.dequeue();
+		
+		assertEquals(2, queue.count());
 	}
 }

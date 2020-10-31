@@ -10,13 +10,17 @@ package queue;
  */
 public class LinkedListQueue<T> implements IQueue<T> {
 	
+	int count;
 	private SingleLinkedListQueueNode<T> firstNode;
 	private SingleLinkedListQueueNode<T> lastNode;
 	
-	public LinkedListQueue() { }
+	public LinkedListQueue() 
+	{
+		count = 0;
+	}
 	
 	/* (non-Javadoc)
-	 * @see Queue.IQueue#Enqueue(java.lang.Object)
+	 * @see queue.IQueue#enqueue(java.lang.Object)
 	 */
 	public void enqueue(T item)
 	{
@@ -31,10 +35,11 @@ public class LinkedListQueue<T> implements IQueue<T> {
 			this.lastNode.setNextNode(new SingleLinkedListQueueNode<>(item));
 			this.lastNode = this.lastNode.getNextNode();
 		}
+		count++;
 	}
 	
 	/* (non-Javadoc)
-	 * @see Queue.IQueue#Dequeue()
+	 * @see queue.IQueue#dequeue()
 	 */
 	public T dequeue()
 	{
@@ -46,7 +51,16 @@ public class LinkedListQueue<T> implements IQueue<T> {
 		{
 			lastNode = null; // also set the last node to null
 		}
-		
+		count--;
+
 		return currentFirstItem;
+	}
+
+	/* (non-Javadoc)
+	 * @see queue.IQueue#count
+	 */
+	public int count()
+	{
+		return count;
 	}
 }

@@ -19,4 +19,10 @@ public interface IStack<T> {
 	 * @return the item currently on the top of the stack
 	 */
 	T peek();
+
+	/**
+	 * Returns the count of items in the stack
+	 * @return the count of items in the stack
+	 */
+	int count();
 }
