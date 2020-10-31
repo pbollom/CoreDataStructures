@@ -1,4 +1,4 @@
-package Queue;
+package queue;
 
 /**
  * A generic FIFO queue

@@ -1,7 +1,7 @@
 package test;
 
 import org.junit.*;
-import List.LinkedList;
+import list.LinkedList;
 
 public class LinkedListTests extends ListTestsBase implements IListTests {
     

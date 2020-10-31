@@ -1,4 +1,4 @@
-package Queue;
+package queue;
 
 /**
  * Linked list data structure used internal to the Queue class.

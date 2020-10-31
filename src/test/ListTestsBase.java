@@ -2,7 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
-import List.IList;
+import list.IList;
 
 public abstract class ListTestsBase
 {

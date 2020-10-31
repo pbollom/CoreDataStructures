@@ -1,4 +1,4 @@
-package Stack;
+package stack;
 
 /**
  * Linked list data structure used internal to the Stack class.

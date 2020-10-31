@@ -1,7 +1,7 @@
 package test;
 
 import org.junit.*;
-import List.ArrayList;
+import list.ArrayList;
 
 public class ArrayListTests extends ListTestsBase implements IListTests {
 

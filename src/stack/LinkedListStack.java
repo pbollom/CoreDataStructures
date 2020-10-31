@@ -1,4 +1,4 @@
-package Stack;
+package stack;
 
 /**
  * A generic LIFO stack.
