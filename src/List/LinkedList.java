@@ -19,7 +19,7 @@ public class LinkedList<T> implements IList<T>
 
 	public void Add(T item)
 	{
-		SingleLinkedListNode<T> newNode = new SingleLinkedListNode<T>(item);
+		SingleLinkedListNode<T> newNode = new SingleLinkedListNode<>(item);
 		if (this.count == 0)
 		{ // new list
 			this.firstNode = newNode;
@@ -40,7 +40,7 @@ public class LinkedList<T> implements IList<T>
 			throw new IndexOutOfBoundsException();
 		}
 		
-		SingleLinkedListNode<T> newNode = new SingleLinkedListNode<T>(item);
+		SingleLinkedListNode<T> newNode = new SingleLinkedListNode<>(item);
 		
 		if (index == 0) // special case of adding it to the start of the list
 		{ 

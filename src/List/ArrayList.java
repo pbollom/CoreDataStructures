@@ -21,7 +21,7 @@ public class ArrayList<T> implements IList<T>
 	@Override
 	public void Add(T item)
 	{
-		this.ResizeIfNecessaryWhenAdding();
+		this.resizeIfNecessaryWhenAdding();
 		this.items[this.count] = item;
 		this.count++;
 	}
@@ -34,7 +34,7 @@ public class ArrayList<T> implements IList<T>
 			throw new IndexOutOfBoundsException();
 		}
 		
-		this.ResizeIfNecessaryWhenAdding();
+		this.resizeIfNecessaryWhenAdding();
 		for (int i = this.count - 1; i >= index; i--)
 		{
 			this.items[i+1] = this.items[i];
@@ -72,16 +72,13 @@ public class ArrayList<T> implements IList<T>
 	}
 	
 	@SuppressWarnings("unchecked")
-	private void ResizeIfNecessaryWhenAdding()
+	private void resizeIfNecessaryWhenAdding()
 	{
 		if (this.count == this.items.length)
 		{
 			// just do the naive implementation for now. can be optimized
 			T[] newItems = (T[])(new Object[this.items.length * 2 + 1]); // safe to do because we're only doing this internally
-			for (int i = 0; i < this.count; i++)
-			{
-				newItems[i] = this.items[i];
-			}
+			System.arraycopy(this.items, 0, newItems, 0, this.count);
 			this.items = newItems; 
 		}
 	}

@@ -23,7 +23,7 @@ public class LinkedListStack<T> implements IStack<T> {
 	public void Push(T item)
 	{
 		//topNode could be null if this is the first item we're adding
-		topNode = new SingleLinkedListStackNode<T>(item, topNode);
+		topNode = new SingleLinkedListStackNode<>(item, topNode);
 	}
 	
 	/* (non-Javadoc)

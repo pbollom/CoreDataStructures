@@ -22,13 +22,13 @@ public class LinkedListQueue<T> implements IQueue<T> {
 	{
 		if (this.lastNode == null) // we want to enqueue the first item
 		{
-			SingleLinkedListQueueNode<T> initialNode = new SingleLinkedListQueueNode<T>(item);
+			SingleLinkedListQueueNode<T> initialNode = new SingleLinkedListQueueNode<>(item);
 			this.firstNode = initialNode;
 			this.lastNode = initialNode;
 		}
 		else
 		{
-			this.lastNode.SetNextNode(new SingleLinkedListQueueNode<T>(item));
+			this.lastNode.SetNextNode(new SingleLinkedListQueueNode<>(item));
 			this.lastNode = this.lastNode.GetNextNode();
 		}
 	}
