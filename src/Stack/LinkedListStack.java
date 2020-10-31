@@ -20,7 +20,7 @@ public class LinkedListStack<T> implements IStack<T> {
 	/* (non-Javadoc)
 	 * @see Stack.IStack#Push(java.lang.Object)
 	 */
-	public void Push(T item)
+	public void push(T item)
 	{
 		//topNode could be null if this is the first item we're adding
 		topNode = new SingleLinkedListStackNode<>(item, topNode);
@@ -29,12 +29,12 @@ public class LinkedListStack<T> implements IStack<T> {
 	/* (non-Javadoc)
 	 * @see Stack.IStack#Pop()
 	 */
-	public T Pop()
+	public T pop()
 	{
 		if (this.topNode == null) { return null; }
 		
-		T topItem = this.topNode.GetItem();
-		topNode = this.topNode.GetPriorNode();
+		T topItem = this.topNode.getItem();
+		topNode = this.topNode.getPriorNode();
 		
 		return topItem;
 	}
@@ -42,10 +42,10 @@ public class LinkedListStack<T> implements IStack<T> {
 	/* (non-Javadoc)
 	 * @see Stack.IStack#Peek()
 	 */
-	public T Peek()
+	public T peek()
 	{
 		if (this.topNode == null) { return null; }
 		
-		return this.topNode.GetItem();
+		return this.topNode.getItem();
 	}
 }

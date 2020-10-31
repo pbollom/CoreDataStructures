@@ -9,7 +9,7 @@ public class LinkedListStackTests {
 	@Test
 	public void Peek_EmptyStack_ReturnsNull() {
 		LinkedListStack<Object> stack = new LinkedListStack<Object>();
-		assertNull(stack.Peek());
+		assertNull(stack.peek());
 	}
 	
 	@Test
@@ -17,9 +17,9 @@ public class LinkedListStackTests {
 	{
 		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object obj = new Object();
-		stack.Push(obj);
+		stack.push(obj);
 		
-		assertEquals(obj, stack.Peek());
+		assertEquals(obj, stack.peek());
 	}
 	
 	@Test
@@ -27,17 +27,17 @@ public class LinkedListStackTests {
 	{
 		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object obj = new Object();
-		stack.Push(obj);
+		stack.push(obj);
 		
-		assertEquals(obj, stack.Peek());
-		assertEquals(obj, stack.Peek());
-		assertEquals(obj, stack.Peek());
+		assertEquals(obj, stack.peek());
+		assertEquals(obj, stack.peek());
+		assertEquals(obj, stack.peek());
 	}
 	
 	@Test
 	public void Pop_EmptyStack_ReturnsNull() {
 		LinkedListStack<Object> stack = new LinkedListStack<Object>();
-		assertNull(stack.Pop());
+		assertNull(stack.pop());
 	}
 	
 	@Test
@@ -45,9 +45,9 @@ public class LinkedListStackTests {
 	{
 		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object obj = new Object();
-		stack.Push(obj);
+		stack.push(obj);
 		
-		assertEquals(obj, stack.Pop());
+		assertEquals(obj, stack.pop());
 	}
 	
 	@Test
@@ -55,16 +55,16 @@ public class LinkedListStackTests {
 	{
 		LinkedListStack<Object> stack = new LinkedListStack<Object>();
 		Object firstIn = new Object();
-		stack.Push(firstIn);
+		stack.push(firstIn);
 		Object secondIn = new Object();
-		stack.Push(secondIn);
+		stack.push(secondIn);
 		Object thirdIn = new Object();
-		stack.Push(thirdIn);
+		stack.push(thirdIn);
 		
-		assertEquals(thirdIn, stack.Pop());
-		assertEquals(secondIn, stack.Pop());
-		assertEquals(firstIn, stack.Pop());
-		assertNull(stack.Pop());
+		assertEquals(thirdIn, stack.pop());
+		assertEquals(secondIn, stack.pop());
+		assertEquals(firstIn, stack.pop());
+		assertNull(stack.pop());
 	}
 
 }

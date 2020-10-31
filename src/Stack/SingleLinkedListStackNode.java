@@ -14,7 +14,7 @@ public class SingleLinkedListStackNode<T> {
 	 * Could be null if this is the last node in the list.
 	 * @return reference to the prior node in the list, or null if there is no prior node
 	 */
-	public SingleLinkedListStackNode<T> GetPriorNode()
+	public SingleLinkedListStackNode<T> getPriorNode()
 	{
 		return priorNode;
 	}
@@ -24,7 +24,7 @@ public class SingleLinkedListStackNode<T> {
 	 * Returns a reference to the item this node stores.
 	 * @return reference to the item this node stores.
 	 */
-	public T GetItem()
+	public T getItem()
 	{
 		return this.item;
 	}

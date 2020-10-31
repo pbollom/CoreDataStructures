@@ -10,7 +10,7 @@ public class LinkedListQueueTests {
 	public void Dequeue_EmptyQueue_ReturnsNull()
 	{
 		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
-		assertNull(queue.Dequeue());
+		assertNull(queue.dequeue());
 	}
 
 	@Test
@@ -18,10 +18,10 @@ public class LinkedListQueueTests {
 	{
 		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
 		Object obj = new Object();
-		queue.Enqueue(obj);
+		queue.enqueue(obj);
 		
-		assertEquals(obj, queue.Dequeue());
-		assertNull(queue.Dequeue());
+		assertEquals(obj, queue.dequeue());
+		assertNull(queue.dequeue());
 	}
 	
 	@Test
@@ -29,15 +29,15 @@ public class LinkedListQueueTests {
 	{
 		LinkedListQueue<Object> queue = new LinkedListQueue<Object>();
 		Object firstIn = new Object();
-		queue.Enqueue(firstIn);
+		queue.enqueue(firstIn);
 		Object secondIn = new Object();
-		queue.Enqueue(secondIn);
+		queue.enqueue(secondIn);
 		Object thirdIn = new Object();
-		queue.Enqueue(thirdIn);
+		queue.enqueue(thirdIn);
 		
-		assertEquals(firstIn, queue.Dequeue());
-		assertEquals(secondIn, queue.Dequeue());
-		assertEquals(thirdIn, queue.Dequeue());
-		assertNull(queue.Dequeue());
+		assertEquals(firstIn, queue.dequeue());
+		assertEquals(secondIn, queue.dequeue());
+		assertEquals(thirdIn, queue.dequeue());
+		assertNull(queue.dequeue());
 	}
 }

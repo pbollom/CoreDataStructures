@@ -14,7 +14,7 @@ public class SingleLinkedListQueueNode<T> {
 	 * Could be null if this is the last node in the list.
 	 * @return reference to the next node in the list, or null if there is no next node
 	 */
-	public SingleLinkedListQueueNode<T> GetNextNode()
+	public SingleLinkedListQueueNode<T> getNextNode()
 	{
 		return nextNode;
 	}
@@ -23,7 +23,7 @@ public class SingleLinkedListQueueNode<T> {
 	 * Updates this node's pointer to the next node in the linked list
 	 * @param nextNode reference to the next node to point to
 	 */
-	public void SetNextNode(SingleLinkedListQueueNode<T> nextNode)
+	public void setNextNode(SingleLinkedListQueueNode<T> nextNode)
 	{
 		this.nextNode = nextNode;
 	}
@@ -33,7 +33,7 @@ public class SingleLinkedListQueueNode<T> {
 	 * Returns a reference to the item this node stores.
 	 * @return reference to the item this node stores.
 	 */
-	public T GetItem()
+	public T getItem()
 	{
 		return item;
 	}

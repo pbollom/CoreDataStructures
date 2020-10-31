@@ -18,7 +18,7 @@ public class LinkedListQueue<T> implements IQueue<T> {
 	/* (non-Javadoc)
 	 * @see Queue.IQueue#Enqueue(java.lang.Object)
 	 */
-	public void Enqueue(T item)
+	public void enqueue(T item)
 	{
 		if (this.lastNode == null) // we want to enqueue the first item
 		{
@@ -28,20 +28,20 @@ public class LinkedListQueue<T> implements IQueue<T> {
 		}
 		else
 		{
-			this.lastNode.SetNextNode(new SingleLinkedListQueueNode<>(item));
-			this.lastNode = this.lastNode.GetNextNode();
+			this.lastNode.setNextNode(new SingleLinkedListQueueNode<>(item));
+			this.lastNode = this.lastNode.getNextNode();
 		}
 	}
 	
 	/* (non-Javadoc)
 	 * @see Queue.IQueue#Dequeue()
 	 */
-	public T Dequeue()
+	public T dequeue()
 	{
 		if (this.firstNode == null) { return null; }
 		
-		T currentFirstItem = this.firstNode.GetItem();
-		this.firstNode = firstNode.GetNextNode();
+		T currentFirstItem = this.firstNode.getItem();
+		this.firstNode = firstNode.getNextNode();
 		if (this.firstNode == null) // we just dequeued the last item
 		{
 			lastNode = null; // also set the last node to null
