@@ -7,14 +7,14 @@ package Queue;
  *
  * @param <T> the type of object the QueueNode holds
  */
-public class QueueNode<T> {
-	private QueueNode<T> nextNode;
+public class SingleLinkedListQueueNode<T> {
+	private SingleLinkedListQueueNode<T> nextNode;
 	/**
 	 * Returns a reference to the next node in the linked list.
 	 * Could be null if this is the last node in the list.
 	 * @return reference to the next node in the list, or null if there is no next node
 	 */
-	public QueueNode<T> GetNextNode()
+	public SingleLinkedListQueueNode<T> GetNextNode()
 	{
 		return nextNode;
 	}
@@ -23,7 +23,7 @@ public class QueueNode<T> {
 	 * Updates this node's pointer to the next node in the linked list
 	 * @param nextNode reference to the next node to point to
 	 */
-	public void SetNextNode(QueueNode<T> nextNode)
+	public void SetNextNode(SingleLinkedListQueueNode<T> nextNode)
 	{
 		this.nextNode = nextNode;
 	}
@@ -43,7 +43,7 @@ public class QueueNode<T> {
 	 * @param item the item to store in the node
 	 * @param nextNode reference to the node immediately preceding this node
 	 */
-	public QueueNode(T item)
+	public SingleLinkedListQueueNode(T item)
 	{
 		this.item = item;
 	}

@@ -7,14 +7,14 @@ package Stack;
  *
  * @param <T> the type of object the StackNode holds
  */
-public class StackNode<T> {
-	private StackNode<T> priorNode;
+public class SingleLinkedListStackNode<T> {
+	private SingleLinkedListStackNode<T> priorNode;
 	/**
 	 * Returns a reference to the prior node in the linked list.
 	 * Could be null if this is the last node in the list.
 	 * @return reference to the prior node in the list, or null if there is no prior node
 	 */
-	public StackNode<T> GetPriorNode()
+	public SingleLinkedListStackNode<T> GetPriorNode()
 	{
 		return priorNode;
 	}
@@ -34,7 +34,7 @@ public class StackNode<T> {
 	 * @param item the item to store in the node
 	 * @param priorNode reference to the node immediately preceding this node
 	 */
-	public StackNode(T item, StackNode<T> priorNode)
+	public SingleLinkedListStackNode(T item, SingleLinkedListStackNode<T> priorNode)
 	{
 		this.item = item;
 		this.priorNode = priorNode;

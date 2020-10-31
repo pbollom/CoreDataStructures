@@ -8,12 +8,12 @@ package Queue;
  *
  * @param <T> type of object to add to the queue
  */
-public class Queue<T> implements IQueue<T> {
+public class LinkedListQueue<T> implements IQueue<T> {
 	
-	private QueueNode<T> firstNode;
-	private QueueNode<T> lastNode;
+	private SingleLinkedListQueueNode<T> firstNode;
+	private SingleLinkedListQueueNode<T> lastNode;
 	
-	public Queue() { }
+	public LinkedListQueue() { }
 	
 	/* (non-Javadoc)
 	 * @see Queue.IQueue#Enqueue(java.lang.Object)
@@ -22,13 +22,13 @@ public class Queue<T> implements IQueue<T> {
 	{
 		if (this.lastNode == null) // we want to enqueue the first item
 		{
-			QueueNode<T> initialNode = new QueueNode<T>(item);
+			SingleLinkedListQueueNode<T> initialNode = new SingleLinkedListQueueNode<T>(item);
 			this.firstNode = initialNode;
 			this.lastNode = initialNode;
 		}
 		else
 		{
-			this.lastNode.SetNextNode(new QueueNode<T>(item));
+			this.lastNode.SetNextNode(new SingleLinkedListQueueNode<T>(item));
 			this.lastNode = this.lastNode.GetNextNode();
 		}
 	}

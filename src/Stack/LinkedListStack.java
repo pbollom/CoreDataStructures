@@ -8,14 +8,14 @@ package Stack;
  *
  * @param <T> the type of object to add to the stack
  */
-public class Stack<T> implements IStack<T> {
+public class LinkedListStack<T> implements IStack<T> {
 	
-	private StackNode<T> topNode;
+	private SingleLinkedListStackNode<T> topNode;
 	
 	/**
 	 * Initializes a new instance of the stack class.
 	 */
-	public Stack() { }
+	public LinkedListStack() { }
 	
 	/* (non-Javadoc)
 	 * @see Stack.IStack#Push(java.lang.Object)
@@ -23,7 +23,7 @@ public class Stack<T> implements IStack<T> {
 	public void Push(T item)
 	{
 		//topNode could be null if this is the first item we're adding
-		topNode = new StackNode<T>(item, topNode);
+		topNode = new SingleLinkedListStackNode<T>(item, topNode);
 	}
 	
 	/* (non-Javadoc)

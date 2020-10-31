@@ -2,28 +2,17 @@ package UnitTests;
 
 import static org.junit.Assert.*;
 
-import org.junit.*;
-
 import List.IList;
 
 public abstract class ListTestsBase<T extends IList<Object>>
 {
-	private IList<Object> list;
-
-    protected abstract IList<Object> createInstance();
-	
-    @Before 
-    public void setUp() {
-        list = createInstance();
-    }
+	protected IList<Object> list;
     
-	@Test
-	public void Count_EmptyList_ReturnsZero() {		
+	protected void Count_EmptyList_ReturnsZero_Base() {		
 		assertEquals(list.Count(), 0);
 	}
 	
-	@Test
-	public void Count_MultipleItemList_ReturnsCorrectCount() {
+	protected void Count_MultipleItemList_ReturnsCorrectCount_Base() {
 		int count = 3;
 		for (int i = 0; i < count; i++) {
 			list.Add(new Object());
@@ -32,8 +21,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Count(), count);
 	}
 
-	@Test
-	public void Get_IndexGreaterThanCount_ThrowsException() {
+	protected void Get_IndexGreaterThanCount_ThrowsException_Base() {
 		try {
 			list.Get(0);
 			assertTrue(false);
@@ -42,8 +30,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		}
 	}
 	
-	@Test
-	public void Get_IndexZero_ReturnsFirstItem() {
+	protected void Get_IndexZero_ReturnsFirstItem_Base() {
 		Object firstObj = new Object();
 		list.Add(firstObj);
 		Object secondObj = new Object();
@@ -52,8 +39,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Get(0), firstObj);
 	}
 	
-	@Test
-	public void Get_InBoundsIndex_ReturnsItemAtIndexAndDoesNotRemoveIt() {
+	protected void Get_InBoundsIndex_ReturnsItemAtIndexAndDoesNotRemoveIt_Base() {
 		Object firstObj = new Object();
 		list.Add(firstObj);
 		Object secondObj = new Object();
@@ -65,8 +51,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Count(), 3);
 	}
 	
-	@Test
-	public void Remove_IndexGreaterThanEqualToCount_ThrowsException() {	
+	protected void Remove_IndexGreaterThanEqualToCount_ThrowsException_Base() {	
 		try 
 		{
 			list.Remove(0);
@@ -88,8 +73,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		}
 	}
 	
-	@Test
-	public void Remove_IndexZero_ReturnsAndRemovesFirstItem() {
+	protected void Remove_IndexZero_ReturnsAndRemovesFirstItem_Base() {
 		Object firstObj = new Object();
 		list.Add(firstObj);
 		Object secondObj = new Object();
@@ -102,8 +86,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Get(0), secondObj);
 	}
 	
-	@Test
-	public void Remove_LastItem_ReturnsAndRemovesLastItem() {
+	protected void Remove_LastItem_ReturnsAndRemovesLastItem_Base() {
 		Object firstObj = new Object();
 		list.Add(firstObj);
 		Object secondObj = new Object();
@@ -121,8 +104,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Count(), 3);
 	}
 	
-	@Test
-	public void Remove_InteriorItem_ReturnsAndRemoveItem() {
+	protected void Remove_InteriorItem_ReturnsAndRemoveItem_Base() {
 		Object firstObj = new Object();
 		list.Add(firstObj);
 		Object secondObj = new Object();
@@ -136,8 +118,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Get(1), thirdObj);
 	}
 
-	@Test
-	public void Remove_RemoveAllItems_AddingStillWorks() {
+	protected void Remove_RemoveAllItems_AddingStillWorks_Base() {
 		Object firstObj = new Object();
 		list.Add(firstObj);
 		
@@ -151,8 +132,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Get(0), secondObj);
 	}
 	
-	@Test
-	public void AddAtIndex_IndexGreaterThanCount_ThrowsException()
+	protected void AddAtIndex_IndexGreaterThanCount_ThrowsException_Base()
 	{
 		Object obj = new Object();
 		
@@ -167,8 +147,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		}
 	}
 	
-	@Test
-	public void AddAtIndex_IndexZeroInEmptyList_AddsAsFirstElement()
+	protected void AddAtIndex_IndexZeroInEmptyList_AddsAsFirstElement_Base()
 	{
 		Object obj = new Object();
 		
@@ -178,8 +157,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Get(0), obj);
 	}
 	
-	@Test
-	public void AddAtIndex_IndexZeroInPopulatedList_AddsAsFirstElementAndShifts()
+	protected void AddAtIndex_IndexZeroInPopulatedList_AddsAsFirstElementAndShifts_Base()
 	{
 		Object firstObj = new Object();
 		list.Add(firstObj);
@@ -192,8 +170,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Get(1), firstObj);
 	}
 	
-	@Test
-	public void AddAtIndex_IndexEqualToCount_AddsAsLastElement()
+	protected void AddAtIndex_IndexEqualToCount_AddsAsLastElement_Base()
 	{
 		Object firstObj = new Object();
 		list.Add(firstObj);
@@ -206,8 +183,7 @@ public abstract class ListTestsBase<T extends IList<Object>>
 		assertEquals(list.Get(1), secondObj);
 	}
 	
-	@Test
-	public void AddAtIndex_InteriorIndex_AddsAsInteriorElement()
+	protected void AddAtIndex_InteriorIndex_AddsAsInteriorElement_Base()
 	{
 		Object firstObj = new Object();
 		list.Add(firstObj);
