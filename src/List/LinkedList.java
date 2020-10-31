@@ -12,12 +12,12 @@ public class LinkedList<T> implements IList<T>
 		this.count = 0;
 	}
 	
-	public int Count()
+	public int count()
 	{
 		return this.count;
 	}
 
-	public void Add(T item)
+	public void add(T item)
 	{
 		SingleLinkedListNode<T> newNode = new SingleLinkedListNode<>(item);
 		if (this.count == 0)
@@ -26,14 +26,14 @@ public class LinkedList<T> implements IList<T>
 		}
 		else
 		{
-			this.lastNode.SetNextNode(newNode);
+			this.lastNode.setNextNode(newNode);
 		}
 		
 		this.lastNode = newNode;
 		this.count++;
 	}
 
-	public void Add(T item, int index)
+	public void add(T item, int index)
 	{
 		if (index > this.count)
 		{
@@ -44,7 +44,7 @@ public class LinkedList<T> implements IList<T>
 		
 		if (index == 0) // special case of adding it to the start of the list
 		{ 
-			newNode.SetNextNode(this.firstNode);
+			newNode.setNextNode(this.firstNode);
 			this.firstNode = newNode;
 			if (this.count == 0) // special case where this is the first item we're adding
 			{ 
@@ -53,7 +53,7 @@ public class LinkedList<T> implements IList<T>
 		}
 		else if (index == this.count) // special case of adding it to the end of the list
 		{
-			this.lastNode.SetNextNode(newNode);
+			this.lastNode.setNextNode(newNode);
 			this.lastNode = newNode;
 		}
 		else
@@ -62,19 +62,19 @@ public class LinkedList<T> implements IList<T>
 			SingleLinkedListNode<T> priorNode = this.firstNode; // index 0
 			for (int i = 1; i < index; i++)
 			{
-				priorNode = priorNode.GetNextNode();
+				priorNode = priorNode.getNextNode();
 			}
-			SingleLinkedListNode<T> followingNode = priorNode.GetNextNode();
+			SingleLinkedListNode<T> followingNode = priorNode.getNextNode();
 			
 			// do the relinking with the new node between the nodes we found
-			newNode.SetNextNode(followingNode);
-			priorNode.SetNextNode(newNode);
+			newNode.setNextNode(followingNode);
+			priorNode.setNextNode(newNode);
 		}
 		
 		this.count++;
 	}
 
-	public T Get(int index)
+	public T get(int index)
 	{
 		if (index >= this.count)
 		{
@@ -84,13 +84,13 @@ public class LinkedList<T> implements IList<T>
 		SingleLinkedListNode<T> node = this.firstNode; // index 0
 		for (int i = 0; i < index; i++)
 		{
-			node = node.GetNextNode();
+			node = node.getNextNode();
 		}
 		
-		return node.GetItem();
+		return node.getItem();
 	}
 	
-	public T Remove(int index)
+	public T remove(int index)
 	{
 		if (index >= this.count)
 		{
@@ -100,8 +100,8 @@ public class LinkedList<T> implements IList<T>
 		T removedItem = null;
 		if (index == 0) //special case of removing first element
 		{
-			removedItem = this.firstNode.GetItem();
-			this.firstNode = this.firstNode.GetNextNode();
+			removedItem = this.firstNode.getItem();
+			this.firstNode = this.firstNode.getNextNode();
 			if (this.firstNode == null) // special case where the first and last node were the same
 			{
 				this.lastNode = null;
@@ -112,21 +112,21 @@ public class LinkedList<T> implements IList<T>
 			SingleLinkedListNode<T> priorNode = this.firstNode; // index 0
 			for (int i = 1; i < index; i++)
 			{
-				priorNode = priorNode.GetNextNode();
+				priorNode = priorNode.getNextNode();
 			}
-			SingleLinkedListNode<T> nodeToRemove = priorNode.GetNextNode();
-			removedItem = nodeToRemove.GetItem();
+			SingleLinkedListNode<T> nodeToRemove = priorNode.getNextNode();
+			removedItem = nodeToRemove.getItem();
 			
 			// repoint the surrounding nodes
 			if (index == this.count - 1) // removing the last item
 			{
-				priorNode.SetNextNode(null);
+				priorNode.setNextNode(null);
 				this.lastNode = priorNode;
 			}
 			else
 			{
-				SingleLinkedListNode<T> followingNode = nodeToRemove.GetNextNode();
-				priorNode.SetNextNode(followingNode);
+				SingleLinkedListNode<T> followingNode = nodeToRemove.getNextNode();
+				priorNode.setNextNode(followingNode);
 			}
 		}
 		

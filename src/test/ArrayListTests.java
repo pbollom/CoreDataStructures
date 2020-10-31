@@ -6,7 +6,7 @@ import List.ArrayList;
 public class ArrayListTests extends ListTestsBase implements IListTests {
 
 	@Before
-	public void SetUp()
+	public void setUp()
 	{
 		this.list = new ArrayList<Object>();
 	}

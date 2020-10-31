@@ -3,17 +3,17 @@ package List;
 public class SingleLinkedListNode<T> {
 
 	private SingleLinkedListNode<T> nextNode;
-	public SingleLinkedListNode<T> GetNextNode()
+	public SingleLinkedListNode<T> getNextNode()
 	{
 		return this.nextNode;
 	}
-	public void SetNextNode(SingleLinkedListNode<T> nextNode)
+	public void setNextNode(SingleLinkedListNode<T> nextNode)
 	{
 		this.nextNode = nextNode;
 	}
 	
 	private T item;
-	public T GetItem()
+	public T getItem()
 	{
 		return this.item;
 	}

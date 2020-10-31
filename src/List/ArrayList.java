@@ -13,13 +13,13 @@ public class ArrayList<T> implements IList<T>
 	}
 	
 	@Override
-	public int Count()
+	public int count()
 	{
 		return this.count;
 	}
 
 	@Override
-	public void Add(T item)
+	public void add(T item)
 	{
 		this.resizeIfNecessaryWhenAdding();
 		this.items[this.count] = item;
@@ -27,7 +27,7 @@ public class ArrayList<T> implements IList<T>
 	}
 
 	@Override
-	public void Add(T item, int index)
+	public void add(T item, int index)
 	{
 		if (index > this.count)
 		{
@@ -44,7 +44,7 @@ public class ArrayList<T> implements IList<T>
 	}
 
 	@Override
-	public T Get(int index)
+	public T get(int index)
 	{
 		if (index >= this.count)
 		{
@@ -55,7 +55,7 @@ public class ArrayList<T> implements IList<T>
 	}
 
 	@Override
-	public T Remove(int index)
+	public T remove(int index)
 	{
 		if (index >= this.count)
 		{

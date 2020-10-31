@@ -6,7 +6,7 @@ import List.LinkedList;
 public class LinkedListTests extends ListTestsBase implements IListTests {
     
     @Before
-	public void SetUp()
+	public void setUp()
 	{
 		this.list = new LinkedList<Object>();
 	}

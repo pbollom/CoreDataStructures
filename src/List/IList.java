@@ -5,27 +5,27 @@ public interface IList<T> {
 	/**
 	 * @return
 	 */
-	int Count();
+	int count();
 	
 	/**
 	 * @param item
 	 */
-	void Add(T item);
+	void add(T item);
 	
 	/**
 	 * @param item
 	 * @param index
 	 */
-	void Add(T item, int index);
+	void add(T item, int index);
 	
 	/**
 	 * @param index
 	 */
-	T Get(int index);
+	T get(int index);
 	
 	/**
 	 * @param index
 	 * @return
 	 */
-	T Remove(int index);
+	T remove(int index);
 }

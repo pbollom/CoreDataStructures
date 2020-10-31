@@ -8,24 +8,24 @@ public abstract class ListTestsBase
 {
 	protected IList<Object> list;
 	
-	protected abstract void SetUp();
+	protected abstract void setUp();
 
 	protected void Count_EmptyList_ReturnsZero_Base() {		
-		assertEquals(list.Count(), 0);
+		assertEquals(list.count(), 0);
 	}
 	
 	protected void Count_MultipleItemList_ReturnsCorrectCount_Base() {
 		int count = 3;
 		for (int i = 0; i < count; i++) {
-			list.Add(new Object());
+			list.add(new Object());
 		}
 		
-		assertEquals(list.Count(), count);
+		assertEquals(list.count(), count);
 	}
 
 	protected void Get_IndexGreaterThanCount_ThrowsException_Base() {
 		try {
-			list.Get(0);
+			list.get(0);
 			assertTrue(false);
 		} catch (IndexOutOfBoundsException e) {
 			assertTrue(true);
@@ -34,29 +34,29 @@ public abstract class ListTestsBase
 	
 	protected void Get_IndexZero_ReturnsFirstItem_Base() {
 		Object firstObj = new Object();
-		list.Add(firstObj);
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj);
+		list.add(secondObj);
 		
-		assertEquals(list.Get(0), firstObj);
+		assertEquals(list.get(0), firstObj);
 	}
 	
 	protected void Get_InBoundsIndex_ReturnsItemAtIndexAndDoesNotRemoveIt_Base() {
 		Object firstObj = new Object();
-		list.Add(firstObj);
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj);
+		list.add(secondObj);
 		Object thirdObj = new Object();
-		list.Add(thirdObj);
+		list.add(thirdObj);
 		
-		assertEquals(list.Get(1), secondObj);
-		assertEquals(list.Count(), 3);
+		assertEquals(list.get(1), secondObj);
+		assertEquals(list.count(), 3);
 	}
 	
 	protected void Remove_IndexGreaterThanEqualToCount_ThrowsException_Base() {	
 		try 
 		{
-			list.Remove(0);
+			list.remove(0);
 			assertTrue(false);
 		} 
 		catch (IndexOutOfBoundsException e) 
@@ -66,7 +66,7 @@ public abstract class ListTestsBase
 		
 		try 
 		{
-			list.Remove(1);
+			list.remove(1);
 			assertTrue(false);
 		} 
 		catch (IndexOutOfBoundsException e)
@@ -77,61 +77,61 @@ public abstract class ListTestsBase
 	
 	protected void Remove_IndexZero_ReturnsAndRemovesFirstItem_Base() {
 		Object firstObj = new Object();
-		list.Add(firstObj);
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj);
+		list.add(secondObj);
 		Object thirdObj = new Object();
-		list.Add(thirdObj);
+		list.add(thirdObj);
 		
-		assertEquals(list.Remove(0), firstObj);
-		assertEquals(list.Count(), 2);
-		assertEquals(list.Get(0), secondObj);
+		assertEquals(list.remove(0), firstObj);
+		assertEquals(list.count(), 2);
+		assertEquals(list.get(0), secondObj);
 	}
 	
 	protected void Remove_LastItem_ReturnsAndRemovesLastItem_Base() {
 		Object firstObj = new Object();
-		list.Add(firstObj);
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj);
+		list.add(secondObj);
 		Object thirdObj = new Object();
-		list.Add(thirdObj);
+		list.add(thirdObj);
 		
-		assertEquals(list.Remove(2), thirdObj);
-		assertEquals(list.Count(), 2);
+		assertEquals(list.remove(2), thirdObj);
+		assertEquals(list.count(), 2);
 		
 		Object fourthObj = new Object();
-		list.Add(fourthObj);
+		list.add(fourthObj);
 		
-		assertEquals(list.Get(2), fourthObj);
-		assertEquals(list.Count(), 3);
+		assertEquals(list.get(2), fourthObj);
+		assertEquals(list.count(), 3);
 	}
 	
 	protected void Remove_InteriorItem_ReturnsAndRemoveItem_Base() {
 		Object firstObj = new Object();
-		list.Add(firstObj);
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj);
+		list.add(secondObj);
 		Object thirdObj = new Object();
-		list.Add(thirdObj);
+		list.add(thirdObj);
 		
-		assertEquals(list.Remove(1), secondObj);
-		assertEquals(list.Count(), 2);
-		assertEquals(list.Get(0), firstObj);
-		assertEquals(list.Get(1), thirdObj);
+		assertEquals(list.remove(1), secondObj);
+		assertEquals(list.count(), 2);
+		assertEquals(list.get(0), firstObj);
+		assertEquals(list.get(1), thirdObj);
 	}
 
 	protected void Remove_RemoveAllItems_AddingStillWorks_Base() {
 		Object firstObj = new Object();
-		list.Add(firstObj);
+		list.add(firstObj);
 		
-		assertEquals(list.Remove(0), firstObj);
-		assertEquals(list.Count(), 0);
+		assertEquals(list.remove(0), firstObj);
+		assertEquals(list.count(), 0);
 		
 		Object secondObj = new Object();
-		list.Add(secondObj);
+		list.add(secondObj);
 		
-		assertEquals(list.Count(), 1);
-		assertEquals(list.Get(0), secondObj);
+		assertEquals(list.count(), 1);
+		assertEquals(list.get(0), secondObj);
 	}
 	
 	protected void AddAtIndex_IndexGreaterThanCount_ThrowsException_Base()
@@ -140,7 +140,7 @@ public abstract class ListTestsBase
 		
 		try 
 		{
-			list.Add(obj, 1);
+			list.add(obj, 1);
 			assertTrue(false);
 		} 
 		catch (IndexOutOfBoundsException e)
@@ -153,54 +153,51 @@ public abstract class ListTestsBase
 	{
 		Object obj = new Object();
 		
-		list.Add(obj, 0);
+		list.add(obj, 0);
 		
-		assertEquals(list.Count(), 1);
-		assertEquals(list.Get(0), obj);
+		assertEquals(list.count(), 1);
+		assertEquals(list.get(0), obj);
 	}
 	
 	protected void AddAtIndex_IndexZeroInPopulatedList_AddsAsFirstElementAndShifts_Base()
 	{
 		Object firstObj = new Object();
-		list.Add(firstObj);
-		
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj, 0);
+		list.add(secondObj, 0);
 		
-		assertEquals(list.Count(), 2);
-		assertEquals(list.Get(0), secondObj);
-		assertEquals(list.Get(1), firstObj);
+		assertEquals(list.count(), 2);
+		assertEquals(list.get(0), secondObj);
+		assertEquals(list.get(1), firstObj);
 	}
 	
 	protected void AddAtIndex_IndexEqualToCount_AddsAsLastElement_Base()
 	{
 		Object firstObj = new Object();
-		list.Add(firstObj);
-		
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj, 1);
+		list.add(secondObj, 1);
 		
-		assertEquals(list.Count(), 2);
-		assertEquals(list.Get(0), firstObj);
-		assertEquals(list.Get(1), secondObj);
+		assertEquals(list.count(), 2);
+		assertEquals(list.get(0), firstObj);
+		assertEquals(list.get(1), secondObj);
 	}
 	
 	protected void AddAtIndex_InteriorIndex_AddsAsInteriorElement_Base()
 	{
 		Object firstObj = new Object();
-		list.Add(firstObj);
+		list.add(firstObj);
 		Object secondObj = new Object();
-		list.Add(secondObj);
+		list.add(secondObj);
 		Object thirdObj = new Object();
-		list.Add(thirdObj);
-		
+		list.add(thirdObj);
 		Object fourthObj = new Object();
-		list.Add(fourthObj, 2);
+		list.add(fourthObj, 2);
 		
-		assertEquals(list.Count(), 4);
-		assertEquals(list.Get(0), firstObj);
-		assertEquals(list.Get(1), secondObj);
-		assertEquals(list.Get(2), fourthObj);
-		assertEquals(list.Get(3), thirdObj);
+		assertEquals(list.count(), 4);
+		assertEquals(list.get(0), firstObj);
+		assertEquals(list.get(1), secondObj);
+		assertEquals(list.get(2), fourthObj);
+		assertEquals(list.get(3), thirdObj);
 	}
 }
